@@ -10,3 +10,5 @@ new CiCdAwsPipelineDemoStack(app, 'CiCdAwsPipelineDemoStack', {
     region: 'us-east-1',
   }
 });
+
+app.synth();
