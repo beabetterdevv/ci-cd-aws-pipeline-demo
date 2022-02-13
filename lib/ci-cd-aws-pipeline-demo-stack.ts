@@ -25,7 +25,7 @@ export class CiCdAwsPipelineDemoStack extends cdk.Stack {
     }));
 
 
-    testingStage.addPre(new ShellStep("Run Unit Tests", { commands: ['npm test'] }));
+    testingStage.addPre(new ShellStep("Run Unit Tests", { commands: ['npm install', 'npm test'] }));
     testingStage.addPost(new ManualApprovalStep('Manual approval before production'));
 
     const prodStage = pipeline.addStage(new MyPipelineAppStage(this, "prod", {
